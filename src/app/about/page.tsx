@@ -38,9 +38,9 @@ export default function AboutPage() {
             unoptimized
             className="object-cover object-center transform scale-100 hover:scale-[1.01] transition-transform duration-1000 ease-out"
           />
-          {/* Directional Gradient Overlay to ensure crisp text readability on the left while keeping the natural grain texture visible across the banner */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 sm:via-black/70 to-black/35"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/40"></div>
+          {/* Directional Gradient Overlay: Light bottom fade on mobile so background image is clearly visible, preserving desktop */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent md:bg-gradient-to-r md:from-black/95 md:via-black/85 sm:md:via-black/70 md:to-black/35"></div>
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/40"></div>
         </div>
 
         {/* Hero Content Container */}
