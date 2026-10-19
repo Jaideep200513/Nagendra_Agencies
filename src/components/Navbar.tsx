@@ -42,11 +42,11 @@ export function Navbar() {
     <>
       {/* Main Navbar - Full-Width Edge Layout, Spaced Out & Crisp */}
       <header className="sticky top-0 z-50 bg-[#FAF8F5] border-b border-[#E8E1D5] shadow-sm">
-        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 h-20 sm:h-[88px] flex items-center justify-between gap-6">
+        <div className="w-full px-3 sm:px-8 lg:px-12 xl:px-16 h-20 sm:h-[88px] flex items-center justify-between gap-2 sm:gap-6">
           
           {/* Brand Logo & Title - Positioned nicely to the left */}
-          <Link href="/" className="flex items-center gap-3 sm:gap-4 group flex-shrink-0">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-white p-1.5 border-2 border-amber-500/30 shadow-md flex items-center justify-center overflow-hidden flex-shrink-0 group-hover:border-brand-orange group-hover:scale-105 transition-all">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-4 group min-w-0">
+            <div className="w-11 h-11 sm:w-16 sm:h-16 rounded-xl bg-white p-1 sm:p-1.5 border-2 border-amber-500/30 shadow-md flex items-center justify-center overflow-hidden flex-shrink-0 group-hover:border-brand-orange group-hover:scale-105 transition-all">
               <Image 
                 src="/assets/company/logo.png" 
                 alt="Nagendra Agencies Logo" 
@@ -57,10 +57,10 @@ export function Navbar() {
               />
             </div>
             <div className="min-w-0">
-              <span className="font-heading font-black text-2xl sm:text-[28px] text-industrial-950 tracking-tight block leading-tight whitespace-nowrap">
+              <span className="font-heading font-black text-lg xs:text-xl sm:text-2xl lg:text-[28px] text-industrial-950 tracking-tight block leading-tight truncate">
                 NAGENDRA AGENCIES
               </span>
-              <span className="text-[11px] sm:text-xs font-bold text-emerald-800 tracking-wider uppercase block mt-0.5 whitespace-nowrap">
+              <span className="text-[9px] sm:text-[11px] lg:text-xs font-bold text-emerald-800 tracking-wider uppercase block mt-0.5 truncate max-w-[190px] xs:max-w-none">
                 Rice Milling & Grain Processing Machinery
               </span>
             </div>
@@ -190,8 +190,8 @@ export function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Action Buttons & Menu Trigger */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Mobile Action Buttons & Menu Trigger (Compact & Non-overflowing) */}
+          <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden flex-shrink-0">
             <a
               href="tel:04027707687"
               className="w-10 h-10 rounded-xl bg-neutral-100 hover:bg-neutral-200 border border-[#E8E1D5] flex items-center justify-center text-brand-orange active:scale-95 transition-all shadow-sm"
@@ -199,16 +199,6 @@ export function Navbar() {
               title="Call Direct: 040 2770 7687"
             >
               <Phone className="w-4 h-4" />
-            </a>
-            <a
-              href="https://wa.me/9104027707687?text=Hello%20Nagendra%20Agencies%2C%20I%20am%20inquiring%20about%20grain%20machinery."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-700 active:scale-95 transition-all shadow-sm"
-              aria-label="Chat on WhatsApp"
-              title="Chat on WhatsApp"
-            >
-              <MessageCircle className="w-4 h-4" />
             </a>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

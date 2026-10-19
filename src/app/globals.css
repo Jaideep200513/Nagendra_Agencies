@@ -14,12 +14,15 @@
     scroll-behavior: smooth;
     color: #17211b;
     background-color: #FAF7F2;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body {
     font-family: var(--font-sf-pro), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    max-width: 100vw;
   }
 
   h1, h2, h3, h4, h5, h6 {

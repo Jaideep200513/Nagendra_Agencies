@@ -10,7 +10,7 @@ export function FloatingWhatsAppButton() {
   const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
 
   return (
-    <aside aria-label="WhatsApp Contact" className="fixed bottom-24 lg:bottom-6 right-4 sm:right-6 z-50">
+    <aside aria-label="WhatsApp Contact" className="fixed bottom-5 sm:bottom-6 right-4 sm:right-6 z-50">
       <a
         href={whatsappUrl}
         target="_blank"
