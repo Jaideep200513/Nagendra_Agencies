@@ -15,12 +15,12 @@ export default function HomePage() {
   const categories = getAllCategories();
 
   return (
-    <div className="space-y-12 sm:space-y-16 lg:space-y-20 pb-16 sm:pb-20">
+    <div className="space-y-10 sm:space-y-16 lg:space-y-20 pb-16 sm:pb-20">
       
       {/* ========================================================================= */}
       {/* FULL-BLEED AGRO-TECH HERO SECTION                                         */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[580px] lg:min-h-[640px] flex items-center overflow-hidden border-b border-emerald-950 bg-black">
+      <section className="relative min-h-[520px] sm:min-h-[580px] lg:min-h-[640px] flex items-center overflow-hidden border-b border-emerald-950 bg-black">
         {/* Full-bleed Rice Crop Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -29,21 +29,21 @@ export default function HomePage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_35%] lg:object-center transform scale-100 hover:scale-[1.01] transition-transform duration-1000 ease-out"
+            className="object-cover object-[center_30%] lg:object-center transform scale-100 hover:scale-[1.01] transition-transform duration-1000 ease-out"
           />
           {/* Directional Gradient Overlays:
               Mobile: gentle top gradient so the golden rice crop heads are bright and visible, smoothly transitioning to dark contrast behind the text.
               Desktop: exact original left-to-right gradient to keep crop visible on right and text sharp on left. */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/25 lg:bg-gradient-to-r lg:from-black/90 lg:via-black/70 sm:lg:via-black/55 lg:to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 lg:bg-gradient-to-r lg:from-black/90 lg:via-black/70 sm:lg:via-black/55 lg:to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
         </div>
 
         {/* Hero Content Container */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-32 relative z-10 w-full">
-          <div className="max-w-3xl lg:max-w-4xl space-y-5 sm:space-y-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20 lg:py-32 relative z-10 w-full">
+          <div className="max-w-3xl lg:max-w-4xl space-y-4 sm:space-y-8">
 
             <FadeIn direction="up" delay={0.05}>
-              <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black tracking-tight text-white leading-tight sm:leading-[1.06] drop-shadow-2xl">
+              <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black tracking-tight text-white leading-[1.12] sm:leading-[1.06] drop-shadow-2xl">
                 Serving Rice Millers <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">
                   Since 2005
@@ -58,10 +58,10 @@ export default function HomePage() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.18}>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-1">
                 <Link
                   href="/products"
-                  className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-brand-orange hover:bg-orange-700 text-white font-bold text-sm sm:text-base shadow-md hover:shadow-xl transition-all duration-200 uppercase tracking-wider active:scale-[0.98] hover:-translate-y-0.5 text-center"
+                  className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-brand-orange hover:bg-orange-700 text-white font-bold text-sm sm:text-base shadow-md hover:shadow-xl transition-all duration-200 uppercase tracking-wider active:scale-[0.98] hover:-translate-y-0.5 text-center"
                 >
                   <span>Explore Products (28 Machines)</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
@@ -69,7 +69,7 @@ export default function HomePage() {
 
                 <Link
                   href="/about"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-black/80 hover:bg-black text-white font-bold text-sm sm:text-base border border-neutral-700 hover:border-neutral-500 transition-all duration-200 shadow-md active:scale-[0.98] hover:-translate-y-0.5 text-center"
+                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-4 rounded-xl bg-black/75 hover:bg-black text-white font-bold text-sm sm:text-base border border-neutral-700 hover:border-neutral-500 transition-all duration-200 shadow-md active:scale-[0.98] hover:-translate-y-0.5 text-center"
                 >
                   About Firm & Works
                 </Link>
@@ -78,28 +78,28 @@ export default function HomePage() {
 
             {/* Micro Trust Strip - Metric Grid */}
             <FadeIn direction="up" delay={0.24}>
-              <div className="pt-6 sm:pt-8 border-t border-white/20 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 flex flex-col justify-center">
-                  <AnimatedStatNumber value={20} suffix="+" className="text-2xl sm:text-4xl font-black font-heading text-amber-400" />
-                  <span className="text-xs sm:text-sm text-slate-200 font-semibold mt-0.5">Years Wholesaling</span>
+              <div className="pt-4 sm:pt-8 border-t border-white/20 grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-4 border border-white/15 flex flex-col justify-center">
+                  <AnimatedStatNumber value={20} suffix="+" className="text-xl sm:text-4xl font-black font-heading text-amber-400" />
+                  <span className="text-[11px] sm:text-sm text-slate-200 font-semibold mt-0.5">Years Wholesaling</span>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 flex flex-col justify-center">
-                  <AnimatedStatNumber value={28} className="text-2xl sm:text-4xl font-black font-heading text-emerald-400" />
-                  <span className="text-xs sm:text-sm text-slate-200 font-semibold mt-0.5">Machinery Models</span>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-4 border border-white/15 flex flex-col justify-center">
+                  <AnimatedStatNumber value={28} className="text-xl sm:text-4xl font-black font-heading text-emerald-400" />
+                  <span className="text-[11px] sm:text-sm text-slate-200 font-semibold mt-0.5">Machinery Models</span>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 flex flex-col justify-center">
-                  <AnimatedStatNumber value={9} className="text-2xl sm:text-4xl font-black font-heading text-white" />
-                  <span className="text-xs sm:text-sm text-slate-200 font-semibold mt-0.5">Plant Categories</span>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-4 border border-white/15 flex flex-col justify-center">
+                  <AnimatedStatNumber value={9} className="text-xl sm:text-4xl font-black font-heading text-white" />
+                  <span className="text-[11px] sm:text-sm text-slate-200 font-semibold mt-0.5">Plant Categories</span>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 flex flex-col justify-center">
-                  <div className="flex items-center gap-1.5 text-emerald-400 font-bold text-xs sm:text-base">
-                    <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-4 border border-white/15 flex flex-col justify-center">
+                  <div className="flex items-center gap-1 text-emerald-400 font-bold text-xs sm:text-base">
+                    <ShieldCheck className="w-3.5 h-3.5 sm:w-5 sm:h-5 flex-shrink-0" />
                     <span>GST Verified</span>
                   </div>
-                  <span className="text-[10px] sm:text-xs text-slate-200 font-medium mt-0.5 truncate">Secunderabad, Telangana</span>
+                  <span className="text-[10px] sm:text-xs text-slate-200 font-medium mt-0.5 truncate">Secunderabad, TS</span>
                 </div>
               </div>
             </FadeIn>
@@ -112,58 +112,59 @@ export default function HomePage() {
       {/* PRODUCT CATEGORIES OVERVIEW SECTION                                       */}
       {/* ========================================================================= */}
       <SectionTransition id="categories" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-12 border-b border-[#E8E1D5] pb-4 sm:pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-12 border-b border-[#E8E1D5] pb-3 sm:pb-6">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-2">
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-1 sm:mb-2">
               Machinery Portfolio
             </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-black text-industrial-950">
+            <h2 className="text-xl sm:text-4xl lg:text-5xl font-heading font-black text-industrial-950">
               Machinery by Industrial Category
             </h2>
           </div>
           <Link
             href="/products"
-            className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm sm:text-lg transition-all shadow-sm hover:shadow-md whitespace-nowrap self-start sm:self-auto group"
+            className="inline-flex items-center justify-center gap-2 px-3.5 sm:px-6 py-2 sm:py-3.5 rounded-lg bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs sm:text-base transition-all shadow-sm hover:shadow-md whitespace-nowrap self-start sm:self-auto group"
           >
             <span>Browse All 28 Products</span>
-            <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 text-white group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 sm:w-5 h-3.5 sm:h-5 text-white group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+        {/* 2-Column Responsive Grid on Mobile, 3-Column on Desktop */}
+        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 lg:gap-8">
           {categories.map((cat) => (
             <StaggerItem key={cat.slug}>
               <Link
                 href={`/categories/${cat.slug}`}
-                className="group bg-[#FEFCFA] rounded-2xl border border-[#E8E1D5] p-5 sm:p-7 flex flex-col justify-between hover:border-brand-orange hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-out h-full active:scale-[0.99]"
+                className="group bg-[#FEFCFA] rounded-xl sm:rounded-2xl border border-[#E8E1D5] p-3 sm:p-7 flex flex-col justify-between hover:border-brand-orange hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-out h-full active:scale-[0.99]"
               >
                 <div>
-                  <div className="flex items-start justify-between gap-4 mb-4 sm:mb-5">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-[#FAF7F2] border border-[#E8E1D5] p-2 sm:p-2.5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:border-brand-orange/40 transition-all duration-300">
+                  <div className="flex items-start justify-between gap-1.5 sm:gap-4 mb-2 sm:mb-5">
+                    <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-lg sm:rounded-xl bg-[#FAF7F2] border border-[#E8E1D5] p-1.5 sm:p-2.5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:border-brand-orange/40 transition-all duration-300">
                       <Image
                         src={cat.image}
                         alt={cat.name}
-                        width={64}
-                        height={64}
+                        width={56}
+                        height={56}
                         className="object-contain max-h-full"
                       />
                     </div>
-                    <span className="text-xs font-bold px-2.5 py-1 rounded bg-[#F5EFE6] text-slate-700 transition-colors group-hover:bg-amber-100 group-hover:text-amber-900">
-                      {cat.productCount} {cat.productCount === 1 ? 'Machine' : 'Machines'}
+                    <span className="text-[10px] sm:text-xs font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded bg-[#F5EFE6] text-slate-700 transition-colors group-hover:bg-amber-100 group-hover:text-amber-900 whitespace-nowrap">
+                      {cat.productCount} {cat.productCount === 1 ? 'Model' : 'Models'}
                     </span>
                   </div>
 
-                  <h3 className="font-heading font-black text-lg sm:text-2xl text-industrial-950 group-hover:text-brand-orange transition-colors mb-2 sm:mb-3 leading-snug">
+                  <h3 className="font-heading font-black text-xs sm:text-2xl text-industrial-950 group-hover:text-brand-orange transition-colors mb-1 sm:mb-3 leading-snug line-clamp-2">
                     {cat.name}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 sm:line-clamp-3 leading-relaxed mb-4 sm:mb-6 font-normal">
+                  <p className="hidden sm:block text-xs sm:text-sm text-slate-600 line-clamp-2 sm:line-clamp-3 leading-relaxed mb-4 sm:mb-6 font-normal">
                     {cat.description}
                   </p>
                 </div>
 
-                <div className="pt-3 sm:pt-4 border-t border-[#E8E1D5] flex items-center justify-between text-xs sm:text-sm font-black text-slate-700 group-hover:text-brand-orange transition-colors">
-                  <span>Explore Machinery Models</span>
-                  <ArrowRight className="w-3.5 sm:w-4 h-3.5 sm:h-4 transform group-hover:translate-x-1.5 transition-transform duration-200" />
+                <div className="pt-2 sm:pt-4 border-t border-[#E8E1D5] flex items-center justify-between text-[11px] sm:text-sm font-black text-slate-700 group-hover:text-brand-orange transition-colors">
+                  <span className="truncate">Explore Models</span>
+                  <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 transform group-hover:translate-x-1.5 transition-transform duration-200 flex-shrink-0" />
                 </div>
               </Link>
             </StaggerItem>
@@ -182,7 +183,7 @@ export default function HomePage() {
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 block">
                 About Nagendra Agencies
               </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-black text-industrial-950 leading-tight">
+              <h2 className="text-xl sm:text-4xl lg:text-5xl font-heading font-black text-industrial-950 leading-tight">
                 Delivering Reliable Milling & Grain Equipment Across India
               </h2>
               <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
@@ -192,7 +193,7 @@ export default function HomePage() {
                 Our technical team examines and benchmark-tests every machinery unit prior to dispatch, ensuring seamless commercial integration into your processing plant from day one.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 pt-2">
                 <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 hover:text-industrial-950 transition-colors">
                   <Check className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
                   <span>Heavy-Duty Construction Lowers Maintenance</span>
@@ -233,7 +234,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       <SectionTransition id="inquiry-cta" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn direction="up">
-          <div className="bg-gradient-to-r from-industrial-950 via-industrial-900 to-emerald-950 rounded-2xl p-6 sm:p-12 border border-emerald-900/60 text-white relative overflow-hidden shadow-2xl">
+          <div className="bg-gradient-to-r from-industrial-950 via-industrial-900 to-emerald-950 rounded-2xl p-5 sm:p-12 border border-emerald-900/60 text-white relative overflow-hidden shadow-2xl">
             <div className="absolute inset-0 opacity-15 mix-blend-luminosity pointer-events-none">
               <Image
                 src="/assets/hero-rice-crop.jpg"
@@ -243,26 +244,26 @@ export default function HomePage() {
               />
             </div>
             <div className="relative z-10 max-w-2xl space-y-3 sm:space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block">
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400 block">
                 Secunderabad Machinery Supply
               </span>
-              <h2 className="text-xl sm:text-3xl font-heading font-extrabold text-white">
+              <h2 className="text-xl sm:text-3xl font-heading font-extrabold text-white leading-tight">
                 Planning to Upgrade or Install New Grain Processing Machinery?
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 Connect directly with Mr. Nagendra Prasad Gubbala or our sales engineers for equipment recommendations, capacity matching, and transparent ex-factory pricing.
               </p>
               
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4">
                 <a
                   href="tel:04027707687"
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-md bg-brand-orange hover:bg-orange-700 text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 hover:-translate-y-0.5 text-center"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-brand-orange hover:bg-orange-700 text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 text-center"
                 >
                   <PhoneCall className="w-4 h-4 text-white" /> Call 040 2770 7687
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-md bg-black hover:bg-neutral-900 text-white font-bold text-xs sm:text-sm border border-neutral-700 hover:border-neutral-500 transition-all duration-200 shadow-sm active:scale-95 hover:-translate-y-0.5 text-center"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-black hover:bg-neutral-900 text-white font-bold text-xs sm:text-sm border border-neutral-700 hover:border-neutral-500 transition-all duration-200 shadow-sm active:scale-95 text-center"
                 >
                   Send Online Inquiry
                 </Link>

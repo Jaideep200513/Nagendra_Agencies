@@ -107,8 +107,8 @@ export function Navbar() {
               <span className="font-heading font-black text-xl sm:text-2xl lg:text-[26px] text-industrial-950 tracking-tight block leading-tight truncate">
                 NAGENDRA AGENCIES
               </span>
-              <span className="text-[9px] sm:text-[11px] lg:text-xs font-bold text-emerald-800 tracking-wider uppercase block mt-0.5 truncate max-w-[220px] xs:max-w-none">
-                Rice Milling & Grain Processing Machinery
+              <span className="text-[9px] sm:text-[11px] lg:text-xs font-bold text-emerald-800 tracking-wider uppercase block mt-0.5 truncate">
+                Rice Milling & Grain Machinery
               </span>
             </div>
           </Link>

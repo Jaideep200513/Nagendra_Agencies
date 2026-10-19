@@ -31,11 +31,11 @@ export function HomeInfrastructureGallery() {
 
   return (
     <>
-      <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {/* Primary Facility Exterior Showcase */}
         <div
           onClick={() => setActiveImage(images.exterior)}
-          className="relative h-72 sm:h-auto min-h-[300px] rounded-2xl overflow-hidden border border-[#E8E1D5] shadow-md group cursor-pointer"
+          className="relative h-56 sm:h-auto sm:min-h-[300px] rounded-xl sm:rounded-2xl overflow-hidden border border-[#E8E1D5] shadow-md group cursor-pointer"
           role="button"
           tabIndex={0}
           onKeyDown={(e) => {
@@ -65,10 +65,10 @@ export function HomeInfrastructureGallery() {
         </div>
 
         {/* Stacked Sign Board & Statutory Certification */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <div
             onClick={() => setActiveImage(images.board)}
-            className="relative h-48 rounded-xl overflow-hidden border border-[#E8E1D5] shadow-sm group cursor-pointer"
+            className="relative h-40 sm:h-48 rounded-xl overflow-hidden border border-[#E8E1D5] shadow-sm group cursor-pointer"
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
@@ -99,7 +99,7 @@ export function HomeInfrastructureGallery() {
 
           <div
             onClick={() => setActiveImage(images.certification)}
-            className="relative h-56 rounded-xl overflow-hidden border border-[#E8E1D5] shadow-sm group cursor-pointer"
+            className="relative h-40 sm:h-56 rounded-xl overflow-hidden border border-[#E8E1D5] shadow-sm group cursor-pointer"
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
