@@ -7,21 +7,18 @@ import {
   PhoneCall, 
   Check
 } from 'lucide-react';
-import { getAllCategories, getAllProducts } from '../data/products';
-import { ProductCard } from '../components/ProductCard';
+import { getAllCategories } from '../data/products';
 import { FadeIn, StaggerContainer, StaggerItem, AnimatedStatNumber, SectionTransition } from '../components/MotionWrapper';
 import { HomeInfrastructureGallery } from '../components/HomeInfrastructureGallery';
 
 export default function HomePage() {
   const categories = getAllCategories();
-  const allProducts = getAllProducts();
-  const featuredProducts = allProducts.slice(0, 8); // Top 8 featured machines
 
   return (
     <div className="space-y-12 sm:space-y-16 lg:space-y-20 pb-16 sm:pb-20">
       
       {/* ========================================================================= */}
-      {/* FULL-BLEED AGRO-TECH HERO SECTION (Exact desktop model, responsive mobile) */}
+      {/* FULL-BLEED AGRO-TECH HERO SECTION                                         */}
       {/* ========================================================================= */}
       <section className="relative min-h-[580px] lg:min-h-[640px] flex items-center overflow-hidden border-b border-emerald-950 bg-black">
         {/* Full-bleed Rice Crop Background Image */}
@@ -44,15 +41,6 @@ export default function HomePage() {
         {/* Hero Content Container */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-32 relative z-10 w-full">
           <div className="max-w-3xl lg:max-w-4xl space-y-5 sm:space-y-8">
-
-            {/* Mobile Top Subtle Glass Badge */}
-            <FadeIn direction="up" delay={0.02}>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-bold text-amber-300 shadow-md">
-                <span>🌾 Established 2005</span>
-                <span className="text-white/40">•</span>
-                <span className="text-emerald-400">Secunderabad</span>
-              </div>
-            </FadeIn>
 
             <FadeIn direction="up" delay={0.05}>
               <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black tracking-tight text-white leading-tight sm:leading-[1.06] drop-shadow-2xl">
@@ -181,47 +169,6 @@ export default function HomePage() {
             </StaggerItem>
           ))}
         </StaggerContainer>
-      </SectionTransition>
-
-      {/* ========================================================================= */}
-      {/* FEATURED MACHINERY GRID SECTION                                           */}
-      {/* ========================================================================= */}
-      <SectionTransition id="featured" className="bg-[#F4EFE6]/75 py-12 sm:py-20 border-y border-[#E8E1D5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up">
-            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-2">
-                Catalog Highlights
-              </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-black text-industrial-950">
-                Featured Grain Processing Equipment
-              </h2>
-              <p className="text-sm sm:text-lg text-slate-600 mt-2 sm:mt-3">
-                All machinery supplied with verified specifications, genuine components, and transparent commercial pricing.
-              </p>
-            </div>
-          </FadeIn>
-
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-7">
-            {featuredProducts.map((p) => (
-              <StaggerItem key={p.id}>
-                <ProductCard product={p} />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          <FadeIn direction="up" delay={0.15}>
-            <div className="mt-8 sm:mt-14 text-center">
-              <Link
-                href="/products"
-                className="group inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-6 sm:px-9 py-3.5 sm:py-4 rounded-xl bg-industrial-950 hover:bg-neutral-900 text-white font-black text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200 active:scale-95 hover:-translate-y-0.5"
-              >
-                <span>Browse All 28 Machinery Listings</span>
-                <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1.5 transition-transform duration-200" />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
       </SectionTransition>
 
       {/* ========================================================================= */}
