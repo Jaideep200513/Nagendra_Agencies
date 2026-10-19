@@ -30,6 +30,18 @@ export function Navbar() {
     setIsVisible(true);
   }, [pathname]);
 
+  // Lock body scroll when mobile menu is open to prevent awkward background scroll
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   // Scroll listener for smart sticky navbar reveal on scroll-up
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +85,7 @@ export function Navbar() {
     <>
       {/* Smart Sticky Header: Slides in when scrolling up anywhere on the page */}
       <header 
-        className={`sticky top-0 z-50 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#E8E1D5] transition-transform duration-300 ease-in-out ${
+        className={`sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#E8E1D5] transition-transform duration-300 ease-in-out ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         } ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}
       >
@@ -176,34 +188,82 @@ export function Navbar() {
             </button>
           </div>
 
-          {/* Clean Mobile Menu Trigger on Right (Uncluttered, exactly like reference) */}
+          {/* Clean Mobile Menu Trigger on Right */}
           <div className="flex items-center lg:hidden flex-shrink-0">
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => setIsMobileMenuOpen(true)}
               className="w-11 h-11 rounded-xl bg-white border border-[#E8E1D5] hover:bg-[#FAF7F2] flex items-center justify-center text-neutral-900 active:scale-95 transition-all shadow-sm"
-              aria-label="Toggle Navigation Menu"
+              aria-label="Open Navigation Menu"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <Menu className="w-6 h-6" />
             </button>
           </div>
         </div>
+      </header>
 
-        {/* Clean, Elegant Mobile Drawer (Similar to reference screenshot) */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
+      {/* FIXED Full-Viewport Mobile Menu Drawer (Slides down directly in front of the user) */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <div className="fixed inset-0 z-50 lg:hidden flex flex-col justify-start">
+            {/* Dark Backdrop */}
             <motion.div 
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:hidden bg-white border-b border-[#E8E1D5] px-6 pt-5 pb-8 space-y-6 shadow-2xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            />
+
+            {/* Slide-Down Menu Sheet (Directly at top of viewport, no scrolling up needed) */}
+            <motion.div 
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -50, opacity: 0 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-full bg-white rounded-b-3xl shadow-2xl border-b border-[#E8E1D5] px-6 pt-5 pb-8 space-y-6 max-h-[90vh] overflow-y-auto z-10"
             >
+              {/* Drawer Header: Brand + Direct Close Button */}
+              <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
+                <Link 
+                  href="/" 
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                  className="flex items-center gap-2.5 min-w-0"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white p-1 border-2 border-amber-500/30 shadow-sm flex items-center justify-center flex-shrink-0">
+                    <Image 
+                      src="/assets/company/logo.png" 
+                      alt="Nagendra Agencies" 
+                      width={40} 
+                      height={40} 
+                      className="object-contain" 
+                    />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="font-heading font-black text-lg text-industrial-950 block leading-tight truncate">
+                      NAGENDRA AGENCIES
+                    </span>
+                    <span className="text-[9px] font-bold text-emerald-800 tracking-wider uppercase block truncate">
+                      Rice Milling Machinery
+                    </span>
+                  </div>
+                </Link>
+
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-10 h-10 rounded-xl bg-neutral-100 hover:bg-neutral-200 flex items-center justify-center text-neutral-800 active:scale-95 transition-all shadow-sm flex-shrink-0"
+                  aria-label="Close Menu"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
               {/* Clean Vertical Navigation Links */}
-              <nav className="flex flex-col space-y-4">
+              <nav className="flex flex-col space-y-4 pt-1">
                 <Link
                   href="/"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-lg font-heading font-bold transition-colors py-1 ${
+                  className={`text-xl font-heading font-bold transition-colors py-1 ${
                     pathname === '/' ? 'text-brand-orange' : 'text-industrial-950 hover:text-brand-orange'
                   }`}
                 >
@@ -212,7 +272,7 @@ export function Navbar() {
                 <Link
                   href="/products"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-lg font-heading font-bold transition-colors py-1 ${
+                  className={`text-xl font-heading font-bold transition-colors py-1 ${
                     pathname.startsWith('/products') || pathname.startsWith('/categories')
                       ? 'text-brand-orange'
                       : 'text-industrial-950 hover:text-brand-orange'
@@ -223,7 +283,7 @@ export function Navbar() {
                 <Link
                   href="/about"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-lg font-heading font-bold transition-colors py-1 ${
+                  className={`text-xl font-heading font-bold transition-colors py-1 ${
                     pathname === '/about' ? 'text-brand-orange' : 'text-industrial-950 hover:text-brand-orange'
                   }`}
                 >
@@ -232,7 +292,7 @@ export function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-lg font-heading font-bold transition-colors py-1 ${
+                  className={`text-xl font-heading font-bold transition-colors py-1 ${
                     pathname === '/contact' ? 'text-brand-orange' : 'text-industrial-950 hover:text-brand-orange'
                   }`}
                 >
@@ -273,9 +333,9 @@ export function Navbar() {
                 </div>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* Reusable Global Inquiry Modal */}
       <InquiryModal
