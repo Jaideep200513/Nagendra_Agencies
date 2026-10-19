@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #0c2317;
+    --color-accent: #16a34a;
+    --color-gold: #f59e0b;
+    --color-orange: #ea580c;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: #17211b;
+    background-color: #FAF7F2;
+  }
+
+  body {
+    font-family: var(--font-sf-pro), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sf-pro), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: inherit;
+    font-weight: 700;
+  }
+
+  input, button, select, textarea {
+    font-family: inherit;
+  }
+}
+
+/* Custom Scrollbar for Catalog & Galleries */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Tactile Micro-Interactions & Hardware-Accelerated Animation Classes */
+@layer utilities {
+  .btn-tactile {
+    @apply transition-all duration-200 ease-out active:scale-[0.98] active:translate-y-[1px] hover:-translate-y-0.5;
+    will-change: transform, box-shadow;
+  }
+  
+  .card-elevate {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl;
+    will-change: transform, box-shadow;
+  }
+
+  .card-elevate-subtle {
+    @apply transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md;
+    will-change: transform, box-shadow;
+  }
+
+  .media-zoom {
+    @apply transition-transform duration-500 ease-out group-hover:scale-105;
+    will-change: transform;
+  }
+}
+
+/* Smooth Focus Glow for All Interactive Inputs */
+input, textarea, select {
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

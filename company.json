@@ -1,0 +1,91 @@
+{
+  "company_name": "Nagendra Agencies",
+  "legal_status": "Sole Proprietorship",
+  "established_year": 2005,
+  "nature_of_business": "Trader - Wholesaler / Distributor",
+  "additional_business": "Manufacturing & Trading of Mill Machines, Separators, Silos, Furnaces",
+  "key_personnel": {
+    "company_ceo": "Mr. Nagendra Prasad Gubbala"
+  },
+  "gst_details": {
+    "gstin": "36AGXPG1350N1ZX",
+    "registration_year": 2017,
+    "status": "Verified"
+  },
+  "banking": {
+    "banker": "SYNDICATE BANK"
+  },
+  "team_and_workforce": {
+    "total_employees": "11 to 25 People",
+    "team_composition": "Unskilled labors, skilled labors, sales & marketing executives, warehouse experts, qualified testing unit"
+  },
+  "contact_information": {
+    "primary_phone": "040 2770 7687",
+    "indiamart_virtual_phone": "08048967406",
+    "email": "nagendraagencies05@gmail.com",
+    "full_address": "2nd Floor, Ganesh Chamber, X Road, Bolaram Nagar, Ranigunj, Secunderabad, Telangana 500003, India",
+    "locality": "Secunderabad",
+    "city": "Hyderabad / Secunderabad",
+    "state": "Telangana",
+    "postal_code": "500003",
+    "country": "India"
+  },
+  "business_operations": {
+    "payment_mode": [
+      "Cash",
+      "Credit Card"
+    ],
+    "shipment_mode": [
+      "By Road"
+    ],
+    "customized_packaging": false,
+    "quality_testing_facilities": true,
+    "member_since": "15+ Years on IndiaMART",
+    "rating": {
+      "score": 4.3,
+      "max_score": 5.0,
+      "total_votes": 13
+    }
+  },
+  "full_description": "Since 2005 \"Nagendra Agencies\" is working as \"Sole Proprietorship\" Firm and contending in this fierce market marvelously by the in-depth business dexterity. By the support of our professionals, we are engaged in manufacturing and trading of Mill Machine, Rice Bran Centrifugal Separator, Stone Separator, Rice Polishing Machine and many more. The squad of our venture is committed to purveying products that not only satisfy customer needs but also add value to the equipment investment by minimizing costs. We have hired a team of skilled and experienced personnel who hold immense expertise in the concerned domain. With the support of our diligent team, our firm is able to offer machines containing high capacity and are of different dimensions. In order to provide the quality products, a capacious infrastructural facility has also been developed. At this facility, we are able to manufacture our products in a timely manner and according to the detailed requirements of our customers. Furthermore, we also give the facility of customization to our customers if they require any modification and improvement in the catered range of our products. With the support of our mentor, Mr. Nagendra Prasad, we have successfully marked our presence in the industry. Possessing sharp business acumen and extensive industry knowledge, he directs us to look beyond the possibilities and to design latest equipment in order to meet clients' application specific requirements.",
+  "team_description": "We possess the team of trained workers who have absolute knowledge of products which we manufacture in our organization. Our diligent team comprises unskilled labors, skilled labors, sales & marketing executives and warehouse experts. Qualified testing unit has also been appointed to examine the products at multiple stages of production. Due to their close communication and coordination, they are able to accomplish the diverse requirements of our customers. They also endeavor to nurture their talent in the required area of work.",
+  "source_urls": {
+    "profile": "https://www.indiamart.com/nagendraagencies/",
+    "about_us": "https://www.indiamart.com/nagendraagencies/profile.html",
+    "catalog": "https://www.indiamart.com/nagendraagencies/rice-bran-centrifugal-and-stone-separator.html",
+    "photos": "https://www.indiamart.com/nagendraagencies/photos.html",
+    "contact": "https://www.indiamart.com/nagendraagencies/enquiry.html"
+  },
+  "assets": {
+    "logo": {
+      "relative_path": "assets/company/logo.png",
+      "url": "https://2.imimg.com/data2/GT/UT/MY-3598466/nagendra-agencies-logo-120x120.png",
+      "format": "PNG",
+      "dimensions": "120x120"
+    },
+    "infrastructure_board": {
+      "relative_path": "assets/company/infrastructure_board.jpg",
+      "url": "https://5.imimg.com/data5/SELLER/Default/2026/8/638186470/JO/QE/UZ/3598466/txfprtfv-1743197413390371-1000x1000.jpg",
+      "format": "JPEG",
+      "dimensions": "1000x751"
+    },
+    "certification_certificate": {
+      "relative_path": "assets/company/certification_certificate.jpg",
+      "url": "https://5.imimg.com/data5/SELLER/Default/2026/8/638186072/UL/UF/RV/3598466/gqhtpymx-1459130922712713-page-0001-1000x1000.jpg",
+      "format": "JPEG",
+      "dimensions": "707x1000"
+    },
+    "infrastructure_exterior": {
+      "relative_path": "assets/company/infrastructure_exterior.jpg",
+      "url": "https://5.imimg.com/data5/SELLER/Default/2026/8/638186931/HC/KU/AT/3598466/jdevpfhm-1614857393330825-1000x1000.jpg",
+      "format": "JPEG",
+      "dimensions": "751x1000"
+    },
+    "infrastructure_office": {
+      "relative_path": "assets/company/infrastructure_office.jpg",
+      "url": "https://5.imimg.com/data5/SELLER/Default/2026/8/638187120/OR/WL/KD/3598466/pjtasggo-1568874057981544-1000x1000.jpg",
+      "format": "JPEG",
+      "dimensions": "751x1000"
+    }
+  }
+}
